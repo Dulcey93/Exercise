@@ -10,18 +10,35 @@ form.addEventListener("submit", (e) => {
     e.target.reset();
     e.preventDefault();
 })
-class lapiz{
+class lapiz {
     #marca
-    constructor({color="fff700",}){
+    constructor({ color = "#F0D000",
+        dimension = "19",
+        borrador = true,
+        material = "madera",
+        marca = "mongol" }) {
         this.color = color;
+        this.dimension = dimension;
+        this.borrador = borrador;
+        this.material = material;
+        this.#marca = marca;
+
+
     }
-    getColor(){
+    getColor() {
         return this.color;
+    }
+    getDimension() {
+        return this.dimension;
     }
 }
 let obj = undefined;
-let color = document.querySelector(`[name="color"]`);
+let color = document.querySelector(`[name="color"]`)
+let dimension = document.querySelector(`[name="range"]`)
 addEventListener("DOMContentLoaded", (e) => {
-    obj = new lapiz({color: color.value});
-    console.log(obj.getColor());
-});
+    obj = new lapiz({});
+    color.value = obj.color;
+    let plantilla = new DOMParser().parseFromString(data);
+    document.querySelector("table").innerHTML = "";
+    document.querySelector("table").appendChild(plantilla.querySelector("tbody"));
+})
